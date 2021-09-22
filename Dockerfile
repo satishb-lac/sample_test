@@ -1,4 +1,4 @@
-FROM python:3
+FROM jcdemo/flaskapp 
 
 WORKDIR /usr/src/app
 
@@ -7,4 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 ENV PORT = 58080
-CMD [ "python", "./script.py" ]
+ENTRYPOINT ["python"]
+CMD ["file_copy.py"]
