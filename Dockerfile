@@ -1,11 +1,16 @@
-FROM jcdemo/flaskapp 
+FROM python:3.6
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /app/.
 
-COPY . .
-ENV PORT = 58080
+RUN pip install -r requirements.txt
+
+COPY . /app/.
+
+ENV FLASK_RUN_PORT 58081
+ENV KEY_FILE ''
+
 ENTRYPOINT ["python"]
-CMD ["file_copy.py"]
+CMD ["file_copy.py", "${KEY_FILE}"]
+EXPOSE 58081
