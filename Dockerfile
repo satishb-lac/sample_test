@@ -12,5 +12,5 @@ ENV FLASK_RUN_PORT 58081
 ENV KEY_FILE ''
 
 ENTRYPOINT ["python"]
-CMD ["file_copy.py", "${KEY_FILE}"]
+CMD ["vaccines_file_upload.py", "${KEY_FILE}"]
 EXPOSE 58081
