@@ -24,7 +24,6 @@ if __name__ == "__main__":
         bucket.copy_blob(source_blob,bucket,new_blob_name)
         print("File copied")
         app.run(debug=True,host = '0.0.0.0',port='58081')
-        app.stop()
         
     except Exception as exp:
         traceback.print_exc(limit=1,file=sys.stdout)
